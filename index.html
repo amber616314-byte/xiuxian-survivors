@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>凡人仙途 · 弹壳特攻队修仙版</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="fonts/lxgwwenkai-bold.css">
+<link rel="stylesheet" href="fonts/lxgwwenkai-regular.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- ============ UI 层 ============ -->
+<div id="ui">
+
+  <!-- 主菜单 -->
+  <div id="menu" class="screen">
+    <div class="menu-bg-glow"></div>
+    <div class="menu-title">
+      <div class="title-small">弹壳特攻队 · 凡人修仙传风格</div>
+      <h1 class="title-main">凡人仙途</h1>
+      <div class="title-sub">—— 万 妖 秘 境 · 九 死 一 生 ——</div>
+    </div>
+    <div class="menu-info">
+      <p class="menu-desc">你是一介凡人散修，误入万妖秘境。御剑杀妖、吞噬灵气、碎丹成婴……<br>在漫天妖潮中活过 <b>12 分钟</b>，斩灭心魔，飞升灵界！</p>
+      <div class="menu-controls">
+        <span class="key">WASD / 方向键</span> 移动　
+        <span class="key">空格</span> 缩地成寸（闪避）　
+        <span class="key">1/2/3</span> 选择神通　
+        <span class="key">Esc</span> 暂停
+      </div>
+    </div>
+    <div class="menu-actions">
+      <button id="btn-start" class="btn btn-primary">入 世 修 行</button>
+      <button id="btn-howto" class="btn btn-ghost">修行要诀</button>
+    </div>
+    <div id="menu-best" class="menu-best">尚无仙途记录</div>
+    <div class="menu-foot">本地单机 · 无须联网 · 修炼之余请注意休息</div>
+  </div>
+
+  <!-- 玩法说明弹窗 -->
+  <div id="howto" class="screen hidden">
+    <div class="panel">
+      <h2>修行要诀</h2>
+      <ul class="howto-list">
+        <li><b>御剑杀妖</b>：飞剑自动索敌，无需瞄准。击杀妖修可得<b>灵气</b>。</li>
+        <li><b>灵气升级</b>：灵气盈满自动提升修为（等级），每次可择一门<b>神通</b>参悟（三选一）。</li>
+        <li><b>八大装备栏</b>：最多同时参悟 8 门神通，满了只能精进已有神通。</li>
+        <li><b>神通融合</b>：两门配对神通都修至 5 重，自动融合为更强<b>超武</b>，特效暴涨。</li>
+        <li><b>金丹劫</b>：结丹时引天雷淬丹，走位避开天雷。</li>
+        <li><b>碎丹成婴</b>：结丹大圆满金丹碎裂，<b>心魔</b>趁虚而入——击败心魔方可成婴。</li>
+        <li><b>飞升灵界</b>：化神圆满破界飞升，自此每<b>三千年</b>一劫，劫劫更强。</li>
+        <li><b>缩地成寸</b>：空格闪避位移，短暂无敌，躲开致命攻击与 Boss 杀招。</li>
+        <li><b>妖潮渐涌</b>：每 30 秒一波妖潮；狼王、魔蛟、蛛后、心魔依次降临。</li>
+        <li><b>飞升之约</b>：存活 12 分钟并斩灭心魔，即可羽化飞升、通关取胜。</li>
+      </ul>
+      <button id="btn-howto-close" class="btn btn-primary">明 白 了</button>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="hud-left">
+        <div class="realm-badge" id="realm-badge">
+          <div class="realm-icon" id="realm-icon">练</div>
+          <div class="realm-name" id="realm-name">炼气</div>
+        </div>
+        <div class="bars">
+          <div class="bar-row">
+            <div class="bar-label hp">寿元</div>
+            <div class="bar hp"><div class="bar-fill" id="hp-fill"></div><span id="hp-text">100/100</span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label mp">灵气</div>
+            <div class="bar mp"><div class="bar-fill" id="mp-fill"></div><span id="mp-text">100</span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label xp">修为</div>
+            <div class="bar xp"><div class="bar-fill" id="xp-fill"></div><span id="xp-text">Lv.1</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hud-center">
+        <div class="timer" id="timer">12:00</div>
+        <div class="wave" id="wave">第 1 波妖潮</div>
+      </div>
+      <div class="hud-right">
+        <div class="kills">斩妖 <b id="kill-count">0</b></div>
+        <div class="combo" id="combo">连斩 ×1</div>
+      </div>
+    </div>
+    <div class="boss-bar hidden" id="boss-bar">
+      <div class="boss-name" id="boss-name">妖狼王</div>
+      <div class="bar boss"><div class="bar-fill" id="boss-fill"></div></div>
+    </div>
+    <div class="skill-bar" id="skill-bar"></div>
+    <div class="skill-bar-label">八 大 装 备 栏</div>
+    <div class="dodge-cd" id="dodge-cd">缩地成寸 <span class="key">空格</span></div>
+  </div>
+
+  <!-- 渡劫横幅 -->
+  <div id="tribulation" class="hidden">
+    <div class="trib-title" id="trib-title">天 劫 降 临</div>
+    <div class="trib-sub" id="trib-sub">撑过天雷，成就大道</div>
+  </div>
+
+  <!-- 升级三选一 -->
+  <div id="levelup" class="screen hidden">
+    <div class="lu-header">
+      <h2>顿悟 · 择一神通</h2>
+      <div class="lu-sub">修为精进，灵光乍现</div>
+    </div>
+    <div class="lu-cards" id="lu-cards"></div>
+  </div>
+
+  <!-- 暂停 -->
+  <div id="pause" class="screen hidden">
+    <div class="panel">
+      <h2>闭 关 暂 停</h2>
+      <button id="btn-resume" class="btn btn-primary">继续修行</button>
+      <button id="btn-restart" class="btn btn-ghost">重入秘境</button>
+      <button id="btn-quit" class="btn btn-ghost">返回尘世</button>
+    </div>
+  </div>
+
+  <!-- 结算 -->
+  <div id="result" class="screen hidden">
+    <div class="panel result-panel">
+      <h2 id="result-title">陨 落 道 消</h2>
+      <div class="result-sub" id="result-sub">出师未捷身先死</div>
+      <div class="result-stats">
+        <div class="stat"><div class="stat-v" id="rs-time">0:00</div><div class="stat-k">存活</div></div>
+        <div class="stat"><div class="stat-v" id="rs-kills">0</div><div class="stat-k">斩妖</div></div>
+        <div class="stat"><div class="stat-v" id="rs-level">1</div><div class="stat-k">修为</div></div>
+        <div class="stat"><div class="stat-v" id="rs-realm">炼气</div><div class="stat-k">境界</div></div>
+        <div class="stat"><div class="stat-v" id="rs-combo">0</div><div class="stat-k">最高连斩</div></div>
+      </div>
+      <div class="result-title2" id="result-title2">初入道途</div>
+      <div class="result-best" id="result-best"></div>
+      <div class="result-actions">
+        <button id="btn-retry" class="btn btn-primary">再 战 秘 境</button>
+        <button id="btn-menu" class="btn btn-ghost">返 回 主 菜 单</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示 -->
+  <div id="toast" class="hidden"></div>
+  <div id="tutorial" class="hidden">
+    <div class="tut-line"><span class="key">WASD</span> 御空而行</div>
+    <div class="tut-line"><span class="key">空格</span> 缩地成寸</div>
+    <div class="tut-line">飞剑自动索敌 · 击杀妖兽吸取灵气</div>
+    <div class="tut-line">妖王现身将启<b>天罡困阵</b>，阵内决一死战</div>
+    <div class="tut-line">诛仙剑阵可格挡妖弹，<b style="color:#c040ff">紫色必杀弹</b>不可挡</div>
+    <button id="btn-tut-close" class="btn btn-ghost btn-sm">明白了</button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/input.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/waves.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+ "player_stand": {
+  "w": 58,
+  "h": 160,
+  "n": 6
+ },
+ "player_move": {
+  "w": 83,
+  "h": 160,
+  "n": 16
+ },
+ "player_attack": {
+  "w": 233,
+  "h": 160,
+  "n": 8
+ },
+ "player_cast": {
+  "w": 94,
+  "h": 160,
+  "n": 5
+ },
+ "player_dodge": {
+  "w": 77,
+  "h": 160,
+  "n": 6
+ },
+ "player_hit": {
+  "w": 92,
+  "h": 160,
+  "n": 6
+ },
+ "player_defeat": {
+  "w": 100,
+  "h": 160,
+  "n": 7
+ },
+ "enemy_fanzu1": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu2": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu3": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu_mage": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu_bat": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu_elite": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ },
+ "enemy_fanzu_boss": {
+  "w": 67,
+  "h": 160,
+  "n": 4
+ }
+}

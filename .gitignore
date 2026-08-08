@@ -1,0 +1,8 @@
+# 压缩包
+*.zip
+*.rar
+
+# 系统文件
+Thumbs.db
+.DS_Store
+__MACOSX/

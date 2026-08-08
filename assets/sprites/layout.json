@@ -1,0 +1,236 @@
+{
+ "player_attack_spell": {
+  "frameCount": 5,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_attack_spell_recovery": {
+  "frameCount": 3,
+  "frameW": 37,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_attack_sword": {
+  "frameCount": 8,
+  "frameW": 29,
+  "frameH": 63,
+  "animHint": "vertical"
+ },
+ "player_buff_sword": {
+  "frameCount": 4,
+  "frameW": 29,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_defeat": {
+  "frameCount": 7,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_dodge": {
+  "frameCount": 6,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_hit": {
+  "frameCount": 6,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_recovery": {
+  "frameCount": 6,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "grid"
+ },
+ "player_stand": {
+  "frameCount": 6,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "horizontal"
+ },
+ "player_startup": {
+  "frameCount": 7,
+  "frameW": 22,
+  "frameH": 63,
+  "animHint": "vertical"
+ },
+ "player_tilemap_moving_animation": {
+  "frameCount": 16,
+  "frameW": 16,
+  "frameH": 33,
+  "animHint": "grid"
+ },
+ "enemy_fanzu1": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu2": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu3": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu_bat": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu_boss": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu_elite": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_fanzu_mage": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 62,
+  "animHint": "grid"
+ },
+ "enemy_xianzu1": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 61,
+  "animHint": "grid"
+ },
+ "enemy_xianzu3": {
+  "frameCount": 261,
+  "frameW": 25,
+  "frameH": 61,
+  "animHint": "grid"
+ },
+ "fx_cloud0": {
+  "frameCount": 1,
+  "frameW": 15,
+  "frameH": 11,
+  "animHint": "vertical"
+ },
+ "fx_cloud1": {
+  "frameCount": 1,
+  "frameW": 69,
+  "frameH": 29,
+  "animHint": "vertical"
+ },
+ "fx_cloud2": {
+  "frameCount": 1,
+  "frameW": 38,
+  "frameH": 18,
+  "animHint": "vertical"
+ },
+ "fx_cloud3": {
+  "frameCount": 1,
+  "frameW": 27,
+  "frameH": 17,
+  "animHint": "vertical"
+ },
+ "fx_cloud4": {
+  "frameCount": 1,
+  "frameW": 72,
+  "frameH": 24,
+  "animHint": "vertical"
+ },
+ "fx_curse": {
+  "frameCount": 7,
+  "frameW": 34,
+  "frameH": 44,
+  "animHint": "vertical"
+ },
+ "fx_falling_stone": {
+  "frameCount": 8,
+  "frameW": 61,
+  "frameH": 58,
+  "animHint": "vertical"
+ },
+ "fx_fireball": {
+  "frameCount": 11,
+  "frameW": 16,
+  "frameH": 25,
+  "animHint": "vertical"
+ },
+ "fx_flying_sword": {
+  "frameCount": 9,
+  "frameW": 75,
+  "frameH": 37,
+  "animHint": "vertical"
+ },
+ "fx_lightning": {
+  "frameCount": 12,
+  "frameW": 63,
+  "frameH": 126,
+  "animHint": "vertical"
+ },
+ "fx_poison": {
+  "frameCount": 9,
+  "frameW": 31,
+  "frameH": 21,
+  "animHint": "grid"
+ },
+ "fx_restore_life": {
+  "frameCount": 9,
+  "frameW": 33,
+  "frameH": 10,
+  "animHint": "horizontal"
+ },
+ "fx_restore_mana": {
+  "frameCount": 10,
+  "frameW": 10,
+  "frameH": 9,
+  "animHint": "horizontal"
+ },
+ "fx_sigil": {
+  "frameCount": 14,
+  "frameW": 64,
+  "frameH": 28,
+  "animHint": "vertical"
+ },
+ "fx_sigil_buff": {
+  "frameCount": 14,
+  "frameW": 64,
+  "frameH": 28,
+  "animHint": "horizontal"
+ },
+ "fx_swamp": {
+  "frameCount": 12,
+  "frameW": 49,
+  "frameH": 22,
+  "animHint": "vertical"
+ },
+ "fx_wind_blade": {
+  "frameCount": 11,
+  "frameW": 117,
+  "frameH": 91,
+  "animHint": "vertical"
+ },
+ "fx_wind_buff": {
+  "frameCount": 9,
+  "frameW": 73,
+  "frameH": 46,
+  "animHint": "horizontal"
+ },
+ "fx_wood_buff": {
+  "frameCount": 12,
+  "frameW": 50,
+  "frameH": 19,
+  "animHint": "horizontal"
+ }
+}
