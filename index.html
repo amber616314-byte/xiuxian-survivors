@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>凡人仙途 · 弹壳特攻队修仙版</title>
+<title>凡尘渡劫 · Mortal Tribulation</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="fonts/lxgwwenkai-bold.css">
 <link rel="stylesheet" href="fonts/lxgwwenkai-regular.css">
@@ -11,19 +11,16 @@
 <body>
 <canvas id="game"></canvas>
 
-<!-- ============ UI 层 ============ -->
 <div id="ui">
-
-  <!-- 主菜单 -->
   <div id="menu" class="screen">
     <div class="menu-bg-glow"></div>
     <div class="menu-title">
-      <div class="title-small">弹壳特攻队 · 凡人修仙传风格</div>
-      <h1 class="title-main">凡人仙途</h1>
-      <div class="title-sub">—— 万 妖 秘 境 · 九 死 一 生 ——</div>
+      <div class="title-small">修仙幸存者 · SURVIVORS-LIKE</div>
+      <h1 class="title-main">凡尘渡劫</h1>
+      <div class="title-sub">—— M O R T A L · T R I B U L A T I O N ——</div>
     </div>
     <div class="menu-info">
-      <p class="menu-desc">你是一介凡人散修，误入万妖秘境。御剑杀妖、吞噬灵气、碎丹成婴……<br>在漫天妖潮中活过 <b>12 分钟</b>，斩灭心魔，飞升灵界！</p>
+      <p class="menu-desc">你是一介凡人散修，误入万妖秘境。御剑杀妖、吞噬灵气、碎丹成婴……<br>在漫天妖潮中活过 <b>12 分钟</b>，斩灭心魔，羽化飞升！</p>
       <div class="menu-controls">
         <span class="key">WASD / 方向键</span> 移动　
         <span class="key">空格</span> 缩地成寸（闪避）　
@@ -39,7 +36,6 @@
     <div class="menu-foot">本地单机 · 无须联网 · 修炼之余请注意休息</div>
   </div>
 
-  <!-- 玩法说明弹窗 -->
   <div id="howto" class="screen hidden">
     <div class="panel">
       <h2>修行要诀</h2>
@@ -59,7 +55,6 @@
     </div>
   </div>
 
-  <!-- HUD -->
   <div id="hud" class="hidden">
     <div class="hud-top">
       <div class="hud-left">
@@ -100,13 +95,11 @@
     <div class="dodge-cd" id="dodge-cd">缩地成寸 <span class="key">空格</span></div>
   </div>
 
-  <!-- 渡劫横幅 -->
   <div id="tribulation" class="hidden">
     <div class="trib-title" id="trib-title">天 劫 降 临</div>
     <div class="trib-sub" id="trib-sub">撑过天雷，成就大道</div>
   </div>
 
-  <!-- 升级三选一 -->
   <div id="levelup" class="screen hidden">
     <div class="lu-header">
       <h2>顿悟 · 择一神通</h2>
@@ -115,7 +108,6 @@
     <div class="lu-cards" id="lu-cards"></div>
   </div>
 
-  <!-- 暂停 -->
   <div id="pause" class="screen hidden">
     <div class="panel">
       <h2>闭 关 暂 停</h2>
@@ -125,7 +117,6 @@
     </div>
   </div>
 
-  <!-- 结算 -->
   <div id="result" class="screen hidden">
     <div class="panel result-panel">
       <h2 id="result-title">陨 落 道 消</h2>
@@ -146,7 +137,6 @@
     </div>
   </div>
 
-  <!-- 提示 -->
   <div id="toast" class="hidden"></div>
   <div id="tutorial" class="hidden">
     <div class="tut-line"><span class="key">WASD</span> 御空而行</div>

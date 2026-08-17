@@ -1,0 +1,15 @@
+{
+  "name": "mortal-tribulation",
+  "version": "1.0.0",
+  "description": "Mortal Tribulation — an offline browser-native xianxia Survivors-like",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node tools/selfcheck.mjs && node tools/simtest.mjs",
+    "test:selfcheck": "node tools/selfcheck.mjs",
+    "test:sim": "node tools/simtest.mjs"
+  }
+}
