@@ -18,4 +18,6 @@ jobs:
           node-version: 22
 
       - name: Run checks
+        env:
+          TEST_DUR: 200
         run: npm test
